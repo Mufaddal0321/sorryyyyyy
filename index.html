@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>I'm Sorry Card</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffe0e9, #ffd6cc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .card {
+      width: 320px;
+      height: 200px;
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #ff4d6d;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card.opened {
+      height: auto;
+      padding: 30px;
+      background-color: #fff0f3;
+      color: #333;
+    }
+
+    .hidden-message {
+      display: none;
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .card.opened .default-text {
+      display: none;
+    }
+
+    .card.opened .hidden-message {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card" onclick="toggleCard()">
+  <div class="default-text">Tap to open</div>
+  <div class="hidden-message">
+    I'm really sorrryyyy! 💔<br><br>
+    Pakka I'll never be late,<br>
+    instead I'll come 20 minutes early from tomorrow.<br><br>
+    Please forgive me...<br>
+    I love you so much — to heaven and back! ❤️
+  </div>
+</div>
+
+<script>
+  function toggleCard() {
+    const card = document.querySelector('.card');
+    card.classList.toggle('opened');
+  }
+</script>
+
+</body>
+</html>
